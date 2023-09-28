@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-center">
+    Produtos
+  </h2>
+<div class="container">
+  <div class="row">
+    {% for produto in produtos %}
+    <div class="col-sm-4">
+      <div class="card">
+        <img id="img_prod" src="static/images/{{produto.foto}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><small>Código: {{produto.codigo}}</small> - <b>{{ produto.nome }}</b></h5>
+          <p class="card-text">{{ produto.descricao }}</p>
+          <p class="card-text"><h4>R$ {{ produto.preco }}</h4></p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
